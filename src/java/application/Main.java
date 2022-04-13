@@ -1,4 +1,4 @@
-package com.darrensills;
+package application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +20,12 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/PCBViewer.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 802, 626);
-        stage.setTitle("PCB Analyser");
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/GalleryViewer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 964, 813);
+        stage.setTitle("National Gallery Route Finder");
         stage.setScene(scene);
         stage.setResizable(false); //application isn't responsive so non-resizable
-        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/images/pcb-board.png")))); //set the icon
+        stage.getIcons().add(new Image(Objects.requireNonNull(Main.class.getResourceAsStream("/images/mona-lisa.png")))); //set the icon
         stage.show();
     }
 

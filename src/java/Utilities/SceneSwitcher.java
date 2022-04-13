@@ -1,6 +1,6 @@
 package Utilities;
 
-import com.darrensills.Main;
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

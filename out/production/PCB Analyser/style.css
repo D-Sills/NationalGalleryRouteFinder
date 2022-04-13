@@ -1,0 +1,120 @@
+.root {
+    -fx-focus-color: derive(#4D4C4F,0.0%);
+    -fx-faint-focus-color: derive(rgba(77, 76, 79, 0.22),0.0%);
+}
+
+.range-slider .range-bar {
+    -fx-background-color:  black;
+}
+
+.alert{
+    -fx-background-color: #f8f7f2;
+}
+.alert > *.button-bar > *.container{
+    -fx-background-color:  white;
+}
+.alert .button {
+    -fx-base:  #63b7b7;
+    -fx-font-family: calibri;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-effect: none;
+}
+.alert > *.label.content{
+    -fx-padding: -100px;
+}
+.alert.header-panel *.header-panel{
+    -fx-background-color: #f8f7f2;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #D8D8D4;
+}
+.alert.header-panel *.header-panel *.label{
+    -fx-font-size: 16px;
+    -fx-fill: #292929;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:70px;
+}
+
+.tab{
+    -fx-background-insets: 0 0 0 2,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color:  #363636;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #2B2B2B;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+}
+
+.menu-bar {
+    -fx-background-color: black ;
+    -fx-border-width: 2.0;
+
+}
+.menu-bar .label {
+    -fx-font-size: 13.0 pt;
+    -fx-text-fill: white;
+    -fx-padding: 5.0px;
+
+}
+.menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+    -fx-background: black ;
+    -fx-opacity: 0.5;
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+    -fx-text-fill: black;
+    -fx-background: darkgray ;
+}
+.menu-item .label{
+    -fx-font-size: 13.0 pt;
+    -fx-text-fill: black;
+}
+.menu-item .label:hover{
+    -fx-font-size: 13.0 pt;
+    -fx-background: black ;
+    -fx-text-fill: white;
+}
+.context-menu {
+    -fx-background-color:white ;
+    -fx-border-width: 0.2px;
+    -fx-border-color: black;
+    /** -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-background-radius: 0.0 6.0 6.0 6.0, 0.0 5.0 5.0 5.0, 0.0 4.0 4.0 4.0;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+    -fx-opacity: 0.9;*/
+}
+
+.comp-label {
+    -fx-background-color: rgba(0,0,0,0.7);
+}

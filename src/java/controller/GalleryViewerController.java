@@ -96,14 +96,48 @@ public class GalleryViewerController implements Initializable {
     @Override
     public void initialize(java.net.URL url, ResourceBundle resourceBundle) {
         CreateRooms.Create();
-        GraphNode<Room> r1 = new GraphNode<>(rooms.get(0));
+        /*GraphNode<Room> r1 = new GraphNode<>(rooms.get(0));
         GraphNode<Room> r2 = new GraphNode<>(rooms.get(1));
         GraphNode<Room> r3 = new GraphNode<>(rooms.get(2));
-        nodes.add(r1);
-        nodes.add(r2);
-        nodes.add(r3);
-        r1.connectToNodeUndirected(r2, 2);
-        r2.connectToNodeUndirected(r3, 2);
+        GraphNode<Room> r4 = new GraphNode<>(rooms.get(3));
+        GraphNode<Room> r5 = new GraphNode<>(rooms.get(4));
+        GraphNode<Room> r6 = new GraphNode<>(rooms.get(5));
+        GraphNode<Room> r7 = new GraphNode<>(rooms.get(6));
+        GraphNode<Room> r8 = new GraphNode<>(rooms.get(7));
+        GraphNode<Room> r9 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r10 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r11 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r12 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r13 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r14 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r15 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r16 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r17 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r18 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r19 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r20 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r21 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r22 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r23 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r24 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r25 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r26 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r27 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r28 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r29 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r30 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r31 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r32 = new GraphNode<>(rooms.get(2));
+        GraphNode<Room> r3 = new GraphNode<>(rooms.get(2));*/
+
+        for (Room room : rooms) {
+            GraphNode<Room> roomGraphNode = new GraphNode<>(room);
+            nodes.add(roomGraphNode);
+        }
+
+
+        nodes.get(0).connectToNodeUndirected(nodes.get(1), 1);
+        nodes.get(1).connectToNodeUndirected(nodes.get(3), 1);
 
         roomLabel.setVisible(false);
         fileChooser.getExtensionFilters().addAll(

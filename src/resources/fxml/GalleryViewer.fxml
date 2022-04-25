@@ -204,7 +204,7 @@
                      <children>
                         <ImageView fx:id="roomImage" fitHeight="64.0" fitWidth="236.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/870547267961102336.png" />
+
                            </image>
                         </ImageView>
                         <Label fx:id="roomName" prefHeight="77.0" prefWidth="236.0" style="-fx-opacity: 120;" text="Name" textFill="WHITE" GridPane.rowIndex="2">

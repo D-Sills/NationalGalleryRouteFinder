@@ -8,7 +8,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module-library" exported="" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/" />
@@ -19,8 +19,30 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javafx" level="project" />
-    <orderEntry type="library" name="xstream-1.4.10" level="project" />
-    <orderEntry type="library" name="controlsfx-11.1.1" level="project" />
-    <orderEntry type="library" name="jmh-core-1.19" level="project" />
+    <orderEntry type="library" exported="" name="xstream-1.4.10" level="project" />
+    <orderEntry type="library" exported="" name="controlsfx-11.1.1" level="project" />
+    <orderEntry type="library" exported="" name="jmh-core-1.19" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/lib/javafx-sdk-17.0.0.1" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/lib/javafx-sdk-17.0.0.1" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/xstream-1.4.10.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="javafx-sdk-17.0.0" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="jmh-generator-annprocess-1.19" level="project" />
   </component>
 </module>

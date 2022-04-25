@@ -50,6 +50,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -87,36 +88,43 @@
             <DropShadow />
          </effect>
       </HBox>
-      <StackPane prefHeight="325.0" prefWidth="802.0">
+      <StackPane fx:id="stack" prefHeight="325.0" prefWidth="802.0">
          <children>
             <AnchorPane maxHeight="-Infinity" prefHeight="721.0" prefWidth="802.0">
                <children>
                   <HBox prefHeight="693.0" prefWidth="964.0">
                      <children>
-                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <ImageView fx:id="mapImage" fitHeight="693.0" fitWidth="675.0" pickOnBounds="true" smooth="false">
-                                 <image>
-                                    <Image url="@../images/floorplan.png" />
-                                 </image>
-                                 <StackPane.margin>
-                                    <Insets left="10.0" right="7.0" />
-                                 </StackPane.margin>
-                              </ImageView>
-                              <Pane fx:id="rectangleContainer" prefHeight="693.0" prefWidth="643.0">
+                              <StackPane prefHeight="542.0" prefWidth="693.0">
                                  <children>
-                                    <Rectangle fx:id="room29" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="43.0" layoutX="273.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0" />
-                                    <Rectangle fx:id="room15" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="52.0" layoutX="238.0" layoutY="156.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="27.0" />
-                                    <Rectangle fx:id="room17" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="22.0" layoutX="204.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="24.0" />
-                                    <Rectangle fx:id="room16" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="29.0" layoutX="204.0" layoutY="194.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="24.0" />
-                                    <Rectangle fx:id="room9" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="100.0" layoutX="215.0" layoutY="223.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-                                    <Rectangle fx:id="room10" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="35.0" layoutX="270.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="50.0" />
-                                    <Rectangle fx:id="room11" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="35.0" layoutX="320.0" layoutY="254.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
-                                    <Rectangle fx:id="room14" arcHeight="5.0" arcWidth="5.0" fill="#ff000000" height="36.0" layoutX="318.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="36.0" />
+                                    <ImageView fx:id="mapImage" fitHeight="545.0" fitWidth="675.0" pickOnBounds="true" smooth="false">
+                                       <image>
+                                          <Image url="@../images/floorplan.png" />
+                                       </image>
+                                       <StackPane.margin>
+                                          <Insets left="10.0" right="7.0" />
+                                       </StackPane.margin>
+                                    </ImageView>
+                                    <Pane fx:id="rectangleContainer" prefHeight="447.0" prefWidth="693.0" StackPane.alignment="TOP_LEFT">
+                                       <children>
+                                          <Rectangle fx:id="room29" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="47.0" layoutX="276.0" layoutY="188.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="124.0" />
+                                          <Rectangle fx:id="room25" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="32.0" layoutX="322.0" layoutY="137.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="27.0" />
+                                          <Rectangle fx:id="room23" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="32.0" layoutX="268.0" layoutY="105.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="55.0" />
+                                       </children>
+                                       <StackPane.margin>
+                                          <Insets top="5.0" />
+                                       </StackPane.margin>
+                                    </Pane>
                                  </children>
-                              </Pane>
+                              </StackPane>
+                              <ImageView fitHeight="147.0" fitWidth="510.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/floorplan-legend.png" />
+                                 </image>
+                              </ImageView>
                            </children>
-                        </StackPane>
+                        </VBox>
                         <Separator maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="655.0" prefWidth="6.0">
                            <HBox.margin>
                               <Insets top="22.0" />
@@ -132,13 +140,37 @@
                                        </font>
                                     </Label>
                                     <TreeView fx:id="roomTree" prefHeight="229.0" prefWidth="265.0" />
-                                    <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" style="-fx-background-color: #393C41;" text="Create Route" textFill="WHITE">
-                                       <VBox.margin>
-                                          <Insets top="10.0" />
-                                       </VBox.margin>
+                                    <Button layoutX="15.0" layoutY="289.0" mnemonicParsing="false" onAction="#generateShortDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (Djikstra)" textFill="WHITE">
                                        <font>
                                           <Font name="Segoe UI" size="15.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button layoutX="15.0" layoutY="299.0" mnemonicParsing="false" onAction="#generateInterestingDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Interesting Route (Djikstra)" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button layoutX="15.0" layoutY="340.0" mnemonicParsing="false" onAction="#generateShortBFS" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (BFS)" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button layoutX="15.0" layoutY="381.0" mnemonicParsing="false" onAction="#generateValidDFS" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Valid Routes (DFS)" textFill="WHITE">
+                                       <font>
+                                          <Font name="Segoe UI" size="15.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
                                     </Button>
                                  </children>
                                  <padding>
@@ -151,7 +183,14 @@
                   </HBox>
                </children>
             </AnchorPane>
-            <VBox id="comp-label" fx:id="roomLabel" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="132.0" prefWidth="236.0" styleClass="comp-label" visible="false">
+            <Pane fx:id="pane2" layoutX="10.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pane" mouseTransparent="true" pickOnBounds="false" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="TOP_LEFT">
+               <children>
+                  <Circle fx:id="startPoint" fill="#c70a14" mouseTransparent="true" radius="7.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+                  <Circle fx:id="endPoint" fill="#200cc7" mouseTransparent="true" radius="7.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+               </children>
+            </Pane>
+            <VBox id="comp-label" fx:id="roomLabel" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" mouseTransparent="true" pickOnBounds="false" prefHeight="118.0" prefWidth="236.0" styleClass="comp-label">
                <children>
                   <GridPane prefHeight="147.0" prefWidth="236.0">
                      <columnConstraints>
@@ -165,7 +204,7 @@
                      <children>
                         <ImageView fx:id="roomImage" fitHeight="64.0" fitWidth="236.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/sm2ol.png" />
+                              <Image url="@../../../../../../../../Downloads/870547267961102336.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="roomName" prefHeight="77.0" prefWidth="236.0" style="-fx-opacity: 120;" text="Name" textFill="WHITE" GridPane.rowIndex="2">

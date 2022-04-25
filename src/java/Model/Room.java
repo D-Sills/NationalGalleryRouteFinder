@@ -2,6 +2,8 @@ package Model;
 
 import javafx.scene.image.Image;
 
+import java.net.URL;
+
 
 /**
  * @author Darren Sills
@@ -10,9 +12,9 @@ import javafx.scene.image.Image;
 public class Room {
     private int number;
     private String description;
-    private Image image;
+    private URL image;
 
-    public Room(int number, String description, Image image) {
+    public Room(int number, String description, URL image) {
         this.number = number;
         this.description = description;
         this.image = image;
@@ -29,7 +31,7 @@ public class Room {
         return description;
     }
 
-    public Image getImage() {
+    public URL getImage() {
         return image;
     }
 
@@ -44,7 +46,7 @@ public class Room {
         this.description = description;
     }
 
-    public void setImage(Image image) {
+    public void setImage(URL image) {
         this.image = image;
     }
 

@@ -69,7 +69,8 @@ public class CreateRooms {
 			Room room49 = new Room(49, "Bussy", Main.class.getResource("/images/roomImages/46.png"));
 			Room room50 = new Room(50, "Bussy", Main.class.getResource("/images/roomImages/46.png"));
 			Room room51 = new Room(51, "Italy, 1250–1350", Main.class.getResource("/images/roomImages/51.png"));
-			Room room51a = new Room(512, "Fra Angelico, friar-painter of San Domenico", Main.class.getResource("/images/roomImages/51a.png"));
+			Room room51a = new Room(80, "Fra Angelico, friar-painter of San Domenico", Main.class.getResource("/images/roomImages/51a.png"));
+			Room room15s = new Room(81, "Room 15 Stairs", Main.class.getResource("/images/roomImages/15r.png"));
 			Room room52 = new Room(52, "Siena, 1300–1450", Main.class.getResource("/images/roomImages/52.png"));
 			Room room53 = new Room(53, "Florence and Beyond, 1440–1470", Main.class.getResource("/images/roomImages/53.png"));
 			Room room54 = new Room(54, "Mantegna and Crivelli", Main.class.getResource("/images/roomImages/54.png"));
@@ -85,6 +86,7 @@ public class CreateRooms {
 			Room room64 = new Room(64, "Beyond the Netherlands", Main.class.getResource("/images/roomImages/64.png"));
 			Room room65 = new Room(65, "Southern Germany and Austria", Main.class.getResource("/images/roomImages/65.png"));
 			Room room66 = new Room(66, "Leonardo da Vinci at the National Gallery", Main.class.getResource("/images/roomImages/66.png"));
+			Room room67 = new Room(67, "Lussy", Main.class.getResource("/images/roomImages/66.png"));
 			Room room68 = new Room(68, "Room Closed", Main.class.getResource("/images/roomImages/sunleyroom.png"));
 			Room room69 = new Room(69, "Central Hall", Main.class.getResource("/images/roomImages/CentralHall.png"));
 			Room room70 = new Room(70, "Main Vestibule", Main.class.getResource("/images/roomImages/MainVesti.png"));
@@ -142,7 +144,6 @@ public class CreateRooms {
 			rooms.add(room49);
 			rooms.add(room50);
 			rooms.add(room51);
-			rooms.add(room51a);
 			rooms.add(room52);
 			rooms.add(room53);
 			rooms.add(room54);
@@ -158,9 +159,13 @@ public class CreateRooms {
 			rooms.add(room64);
 			rooms.add(room65);
 			rooms.add(room66);
+			rooms.add(room67);
 			rooms.add(room68);
 			rooms.add(room69);
 			rooms.add(room70);
+			rooms.add(room51a);
+			rooms.add(room15s);
+			/*System.out.println(rooms.size());*/
 			//onActionSave();
 		}
 

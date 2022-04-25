@@ -146,7 +146,7 @@
                                           <Rectangle fx:id="room7" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="25.0" layoutX="258.0" layoutY="409.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" />
                                           <Rectangle fx:id="room8" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="55.0" layoutX="205.0" layoutY="356.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="62.0" />
                                           <Rectangle fx:id="room51" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="89.0" layoutY="261.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="25.0" />
-                                          <Rectangle fx:id="room512" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="9.0" layoutX="91.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
+                                          <Rectangle fx:id="room80" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="9.0" layoutX="91.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="21.0" />
                                           <Rectangle fx:id="room52" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="28.0" layoutX="90.0" layoutY="313.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
                                           <Rectangle fx:id="room53" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="31.0" layoutX="88.0" layoutY="341.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="46.0" />
                                           <Rectangle fx:id="room54" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="31.0" layoutX="87.0" layoutY="376.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="46.0" />
@@ -161,7 +161,8 @@
                                           <Rectangle fx:id="room63" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="40.0" layoutX="17.0" layoutY="344.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="36.0" />
                                           <Rectangle fx:id="room64" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="18.0" layoutX="20.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
                                           <Rectangle fx:id="room65" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="28.0" layoutX="21.0" layoutY="405.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="34.0" />
-                                          <Rectangle fx:id="room65" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="21.0" layoutX="26.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                                          <Rectangle fx:id="room66" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="21.0" layoutX="26.0" layoutY="432.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
+                                          <Rectangle fx:id="room81" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="20.0" layoutX="229.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="35.0" />
                                        </children>
                                        <StackPane.margin>
                                           <Insets top="5.0" />

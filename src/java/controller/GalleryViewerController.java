@@ -136,8 +136,101 @@ public class GalleryViewerController implements Initializable {
         }
 
 
+
         nodes.get(0).connectToNodeUndirected(nodes.get(1), 1);
         nodes.get(1).connectToNodeUndirected(nodes.get(3), 1);
+        nodes.get(1).connectToNodeUndirected(nodes.get(3), 1);
+        nodes.get(3).connectToNodeUndirected(nodes.get(5), 1);
+        nodes.get(3).connectToNodeUndirected(nodes.get(4), 1);
+        nodes.get(5).connectToNodeUndirected(nodes.get(7), 1);
+        nodes.get(4).connectToNodeUndirected(nodes.get(10), 1);
+        nodes.get(10).connectToNodeUndirected(nodes.get(9), 1);
+        nodes.get(10).connectToNodeUndirected(nodes.get(13), 1);
+        nodes.get(10).connectToNodeUndirected(nodes.get(11), 1);
+        nodes.get(9).connectToNodeUndirected(nodes.get(8), 1);
+
+        //Blue Rooms
+        nodes.get(51).connectToNodeUndirected(nodes.get(8), 1);
+        nodes.get(51).connectToNodeUndirected(nodes.get(71), 1);
+        nodes.get(51).connectToNodeUndirected(nodes.get(60), 1);
+        nodes.get(51).connectToNodeUndirected(nodes.get(52), 1);
+        nodes.get(52).connectToNodeUndirected(nodes.get(53), 1);
+        nodes.get(53).connectToNodeUndirected(nodes.get(59), 1);
+        nodes.get(53).connectToNodeUndirected(nodes.get(54), 1);
+        nodes.get(54).connectToNodeUndirected(nodes.get(55), 1);
+        nodes.get(55).connectToNodeUndirected(nodes.get(57), 1);
+        nodes.get(55).connectToNodeUndirected(nodes.get(56), 1);
+        nodes.get(57).connectToNodeUndirected(nodes.get(65), 1);
+        nodes.get(57).connectToNodeUndirected(nodes.get(58), 1);
+        nodes.get(58).connectToNodeUndirected(nodes.get(59), 1);
+        nodes.get(59).connectToNodeUndirected(nodes.get(63), 1);
+        nodes.get(59).connectToNodeUndirected(nodes.get(60), 1);
+        nodes.get(60).connectToNodeUndirected(nodes.get(61), 1);
+        nodes.get(61).connectToNodeUndirected(nodes.get(62), 1);
+        nodes.get(62).connectToNodeUndirected(nodes.get(63), 1);
+        nodes.get(63).connectToNodeUndirected(nodes.get(64), 1);
+        nodes.get(64).connectToNodeUndirected(nodes.get(65), 1);
+        nodes.get(65).connectToNodeUndirected(nodes.get(66), 1);
+
+        //Yellow Rooms
+        nodes.get(8).connectToNodeUndirected(nodes.get(14), 1);
+        nodes.get(14).connectToNodeUndirected(nodes.get(15), 1);
+        nodes.get(14).connectToNodeUndirected(nodes.get(16), 1);
+        nodes.get(14).connectToNodeUndirected(nodes.get(72), 1);
+        nodes.get(14).connectToNodeUndirected(nodes.get(29), 1);
+        nodes.get(15).connectToNodeUndirected(nodes.get(16), 1);
+        nodes.get(16).connectToNodeUndirected(nodes.get(17), 1);
+        nodes.get(16).connectToNodeUndirected(nodes.get(17), 1);
+        nodes.get(72).connectToNodeUndirected(nodes.get(26), 1);
+        nodes.get(72).connectToNodeUndirected(nodes.get(18), 1);
+        nodes.get(72).connectToNodeUndirected(nodes.get(18), 1);
+        nodes.get(18).connectToNodeUndirected(nodes.get(19), 1);
+        nodes.get(18).connectToNodeUndirected(nodes.get(24), 1);
+        nodes.get(18).connectToNodeUndirected(nodes.get(22), 1);
+        nodes.get(18).connectToNodeUndirected(nodes.get(21), 1);
+        nodes.get(19).connectToNodeUndirected(nodes.get(20), 1);
+        nodes.get(20).connectToNodeUndirected(nodes.get(21), 1);
+        nodes.get(22).connectToNodeUndirected(nodes.get(23), 1);
+        nodes.get(23).connectToNodeUndirected(nodes.get(24), 1);
+        nodes.get(24).connectToNodeUndirected(nodes.get(25), 1);
+        nodes.get(25).connectToNodeUndirected(nodes.get(28), 1);
+        nodes.get(28).connectToNodeUndirected(nodes.get(27), 1);
+        nodes.get(27).connectToNodeUndirected(nodes.get(26), 1);
+        nodes.get(28).connectToNodeUndirected(nodes.get(29), 1);
+        nodes.get(29).connectToNodeUndirected(nodes.get(13), 1);
+        nodes.get(29).connectToNodeUndirected(nodes.get(30), 1);
+        nodes.get(30).connectToNodeUndirected(nodes.get(31), 1);
+        nodes.get(30).connectToNodeUndirected(nodes.get(32), 1);
+        nodes.get(30).connectToNodeUndirected(nodes.get(67), 1);
+        nodes.get(32).connectToNodeUndirected(nodes.get(37), 1);
+        nodes.get(32).connectToNodeUndirected(nodes.get(33), 1);
+
+        //Green Rooms
+        nodes.get(33).connectToNodeUndirected(nodes.get(34), 1);
+        nodes.get(34).connectToNodeUndirected(nodes.get(35), 1);
+        nodes.get(34).connectToNodeUndirected(nodes.get(41), 1);
+        nodes.get(35).connectToNodeUndirected(nodes.get(36), 1);
+        nodes.get(36).connectToNodeUndirected(nodes.get(37), 1);
+        nodes.get(36).connectToNodeUndirected(nodes.get(38), 1);
+        nodes.get(36).connectToNodeUndirected(nodes.get(40), 1);
+        nodes.get(38).connectToNodeUndirected(nodes.get(39), 1);
+        nodes.get(39).connectToNodeUndirected(nodes.get(69), 1);
+        nodes.get(40).connectToNodeUndirected(nodes.get(44), 1);
+        nodes.get(41).connectToNodeUndirected(nodes.get(42), 1);
+        nodes.get(42).connectToNodeUndirected(nodes.get(43), 1);
+        nodes.get(43).connectToNodeUndirected(nodes.get(44), 1);
+        nodes.get(44).connectToNodeUndirected(nodes.get(45), 1);
+        nodes.get(45).connectToNodeUndirected(nodes.get(70), 1);
+
+        //Central Rooms
+        nodes.get(69).connectToNodeUndirected(nodes.get(68), 1);
+        nodes.get(69).connectToNodeUndirected(nodes.get(11), 1);
+        nodes.get(69).connectToNodeUndirected(nodes.get(70), 1);
+        nodes.get(70).connectToNodeUndirected(nodes.get(46), 1);
+        nodes.get(70).connectToNodeUndirected(nodes.get(0), 1);
+        nodes.get(70).connectToNodeUndirected(nodes.get(1), 1);
+
+
 
         roomLabel.setVisible(false);
         fileChooser.getExtensionFilters().addAll(
@@ -279,8 +372,8 @@ public class GalleryViewerController implements Initializable {
                 GraphNode<?> n = pathList.get(j);
                 Room room = (Room) n.getData();
                 for (Node node : rectangles) {
-                    String i = String.valueOf(room.getNumber());
-                    if (node.getId().contains(i)) {
+                    String i = String.valueOf("room"+room.getNumber());
+                    if (node.getId().equals(i)) {
                         Rectangle rectangle = (Rectangle) node;
                         startX = rectangle.getLayoutX() + (rectangle.getWidth() / 2);
                         startY = rectangle.getLayoutY() + (rectangle.getHeight() / 2);
@@ -294,8 +387,8 @@ public class GalleryViewerController implements Initializable {
                     GraphNode<?> m = pathList.get(j + 1);
                     Room next = (Room) m.getData();
                     for (Node node : rectangles) {
-                        String i2 = String.valueOf(next.getNumber());
-                        if (node.getId().contains(i2)) {
+                        String i2 = String.valueOf("room"+next.getNumber());
+                        if (node.getId().equals(i2)) {
                             Rectangle rectangle2 = (Rectangle) node;
                             endX = rectangle2.getLayoutX() + (rectangle2.getWidth() / 2);
                             endY = rectangle2.getLayoutY() + (rectangle2.getHeight() / 2);

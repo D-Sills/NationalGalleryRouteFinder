@@ -5,6 +5,7 @@ import Model.GraphNodeAL;
 import Model.Room;
 import Utilities.Alerts;
 import Utilities.CreateRooms;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
@@ -15,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -670,6 +672,41 @@ public class GalleryViewerController implements Initializable {
                 roomLabel.setVisible(false);
                 rectangle.getScene().setCursor(Cursor.DEFAULT);
             }
+
+            roomTree.setOnMouseClicked(mouseEvent -> {
+                if(mouseEvent.getClickCount() == 2) {
+                    TreeItem<String> item = roomTree.getSelectionModel().getSelectedItem();
+                    System.out.println("Selected Text : " + item.getValue());
+                    Room theroom = null;
+                    for (Room room : rooms) {
+                        if (item.getValue().equals(room.getNumber() + " - " + room.getDescription())) {
+                            theroom = room;
+                        }
+                        for (TreeItem<String> treeItem1 : ignored.getChildren()) {
+                            if (treeItem1.equals(item)) {
+                                for (GraphNode<?> node : nodestoignore) {
+                                    if (node.getData().equals(theroom)) {
+                                        nodestoignore.remove(node);
+                                        ignored.getChildren().remove(item);
+                                    }
+                                }
+
+                            }
+                        }
+                        for (TreeItem<String> treeItem1 : favoured.getChildren()) {
+                            if (treeItem1.equals(item)) {
+                                for (GraphNode<?> node : nodestovisit) {
+                                    if (node.getData().equals(theroom)) {
+                                        nodestovisit.remove(node);
+                                        favoured.getChildren().remove(item);
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            });
         });
     }
 }

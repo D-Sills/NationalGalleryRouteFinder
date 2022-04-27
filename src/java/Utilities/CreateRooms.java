@@ -166,7 +166,11 @@ public class CreateRooms {
 			rooms.add(room51a);
 			rooms.add(room15s);
 			/*System.out.println(rooms.size());*/
-			//onActionSave();
+				try {
+						onActionSave();
+				} catch (Exception e) {
+						e.printStackTrace();
+				}
 		}
 
 		public static void setRooms(List<Room> rooms) {
@@ -178,7 +182,7 @@ public class CreateRooms {
 		 */
 		public static void onActionSave() throws Exception {
 				Alert alert = new Alert(Alert.AlertType.CONFIRMATION); //confirmation popup
-				alert.setHeaderText("Are you sure you want to save all data to VaccinationSystem.xml?");
+				alert.setHeaderText("Are you sure you want to save all data to RoomData.xml?");
 				Optional<ButtonType> result = alert.showAndWait();
 				if(result.orElse(null ) == ButtonType.OK) { //if ok is selected continue, else do nothing
 						XStream xstream = new XStream(new DomDriver()); //initialise the xstream object
@@ -186,7 +190,7 @@ public class CreateRooms {
 						out.writeObject(rooms); //write out the objects you want saved
 						out.close();
 
-						Alerts.genericInfo("Saved to VaccinationSystem.xml successful!");
+						Alerts.genericInfo("Saved to RoomData.xml successful!");
 				}
 		}
 
@@ -194,24 +198,16 @@ public class CreateRooms {
 		 * Uses the XStream library to load the system data from a .xml file in the project
 		 */
 		@SuppressWarnings("unchecked")
-		public void onActionLoad() throws Exception {
-				File xml = new File("VaccinationSystem.xml");
+		public static void onActionLoad() throws Exception {
+				File xml = new File("RoomData.xml");
 				if(xml.isFile()) {
-						Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-						alert.setHeaderText("Are you sure you want to load all data from VaccinationSystem.xml?");
-						Optional<ButtonType> result = alert.showAndWait();
-						if(result.orElse(null ) == ButtonType.OK) {
-								XStream xstream = new XStream(new DomDriver());
-								ObjectInputStream is = xstream.createObjectInputStream(new FileReader("RoomData.xml"));  //initialise an objectoutputsteam from a specific file
-								setRooms((List<Room>) is.readObject()); //tell it what object to assign values to
-								is.close();
+						XStream xstream = new XStream(new DomDriver());
+						ObjectInputStream is = xstream.createObjectInputStream(new FileReader("RoomData.xml"));  //initialise an objectoutputsteam from a specific file
+						setRooms((List<Room>) is.readObject()); //tell it what object to assign values to
+						is.close();
 
-								Alerts.genericInfo("Loaded from VaccinationSystem.xml successful!");
-						}
-				} else {
-						Alerts.genericInfo("Please save some data first!");
+						Alerts.genericInfo("Loaded from RoomData.xml successfully!");
 				}
-
 		}
 
 

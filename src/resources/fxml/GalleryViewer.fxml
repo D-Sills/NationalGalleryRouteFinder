@@ -36,7 +36,9 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -170,11 +172,54 @@
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <ImageView fitHeight="147.0" fitWidth="510.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/floorplan-legend.png" />
-                                 </image>
-                              </ImageView>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="147.0" fitWidth="510.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/floorplan-legend.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox prefHeight="147.0" prefWidth="227.0">
+                                       <children>
+                                          <Label text="Left Click - Place Starting Point">
+                                             <font>
+                                                <Font name="Times New Roman" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets right="20.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" text="Right Click - Place Ending Point">
+                                             <font>
+                                                <Font name="Times New Roman" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets right="20.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" text="Middle Click - Ignore Room">
+                                             <font>
+                                                <Font name="Times New Roman" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets right="20.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="45.0" text="2xRight Click - Favoured Room">
+                                             <font>
+                                                <Font name="Times New Roman" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets right="20.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                         <Separator maxHeight="-Infinity" minHeight="-Infinity" orientation="VERTICAL" prefHeight="655.0" prefWidth="6.0">
@@ -191,39 +236,83 @@
                                           <Font name="Times New Roman" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TreeView fx:id="roomTree" prefHeight="229.0" prefWidth="265.0" />
-                                    <Button layoutX="15.0" layoutY="289.0" mnemonicParsing="false" onAction="#generateShortDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (Djikstra)" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI" size="15.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="20.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button layoutX="15.0" layoutY="299.0" mnemonicParsing="false" onAction="#generateInterestingDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Interesting Route (Djikstra)" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI" size="15.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="5.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button layoutX="15.0" layoutY="340.0" mnemonicParsing="false" onAction="#generateShortBFS" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (BFS)" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI" size="15.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets top="5.0" />
-                                       </VBox.margin>
-                                    </Button>
-                                    <Button layoutX="15.0" layoutY="381.0" mnemonicParsing="false" onAction="#generateValidDFS" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Valid Routes (DFS)" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI" size="15.0" />
-                                       </font>
+                                    <Separator prefWidth="200.0" />
+                                    <VBox prefHeight="277.0" prefWidth="253.0">
+                                       <children>
+                                          <TreeView fx:id="roomTree" prefHeight="194.0" prefWidth="253.0" />
+                                          <Button mnemonicParsing="false" onAction="#generateInterestingDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Interesting Route (Djikstra)" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#generateShortDjik" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (Djikstra)" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="3.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                    <Separator prefWidth="200.0">
                                        <VBox.margin>
                                           <Insets top="5.0" />
                                        </VBox.margin>
-                                    </Button>
+                                    </Separator>
+                                    <VBox disable="true" prefHeight="67.0" prefWidth="253.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#generateShortBFS" prefHeight="36.0" prefWidth="203.0" style="-fx-background-color: #393C41;" text="Shortest Route (BFS)" textFill="WHITE">
+                                             <font>
+                                                <Font name="Segoe UI" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="3.0" top="3.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <HBox prefHeight="6.0" prefWidth="253.0">
+                                             <children>
+                                                <Label text="Total Pixels: " />
+                                                <Label fx:id="pixelUnits" text="0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Separator prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets top="4.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#generateValidDFS" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #393C41;" text="All Routes (DFS)" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="15.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label prefHeight="17.0" prefWidth="39.0" text="Max:">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="3.0" top="9.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Spinner fx:id="maxSpinner" editable="true" prefHeight="31.0" prefWidth="75.0" />
+                                             </children>
+                                          </HBox>
+                                          <ListView fx:id="routeListView" prefHeight="200.0" prefWidth="200.0">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </ListView>
+                                       </children>
+                                    </VBox>
                                  </children>
                                  <padding>
                                     <Insets left="5.0" right="7.0" top="10.0" />

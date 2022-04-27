@@ -1,13 +1,10 @@
 package Model;
 
-import javafx.scene.image.Image;
-
 import java.net.URL;
 
-
 /**
- * @author Darren Sills
- * Patient class used to store all data related to each patient, as well as the list of vaccination records belonging to each person.
+ * @author Darren Sills & Gedvydas Jucius
+ * Room class used to store all data related to each room
  */
 public class Room {
     private int number;

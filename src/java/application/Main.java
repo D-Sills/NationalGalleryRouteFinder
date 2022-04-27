@@ -10,12 +10,12 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * @author Darren Sills
- * Main class is the launcher for the JavaFX application and also initializes the Vaccination System.
- */
+ * @author Darren Sills & Gedvydas Jucius
+ *  * Main class is the launcher for the JavaFX application
+ *  */
 public class Main extends Application {
     /**
-     * Starts the JavaFX scene; Main Menu.fxml
+     * Starts the JavaFX scene; GalleryViewer.fxml
      * @param stage stage for the JavaFX application.
      */
     @Override

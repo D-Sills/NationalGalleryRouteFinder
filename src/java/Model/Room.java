@@ -53,6 +53,6 @@ public class Room {
      */
     @Override
     public String toString() {
-        return  getNumber() + " - " + getDescription() + "\n";
+        return "room Number: " +  getNumber() + " - " + getDescription() + "\n";
     }
 }

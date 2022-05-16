@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="application.Main" />
-    <module name="National Gallery Route Finder" />
+    <module name="NationalGalleryRouteFinder" />
     <option name="VM_PARAMETERS" value="--module-path &quot;..\NationalGalleryRouteFinder\lib\javafx-sdk-17.0.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED" />
     <method v="2">
       <option name="Make" enabled="true" />

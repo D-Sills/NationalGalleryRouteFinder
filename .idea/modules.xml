@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/National Gallery Route Finder.iml" filepath="$PROJECT_DIR$/National Gallery Route Finder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NationalGalleryRouteFinder.iml" filepath="$PROJECT_DIR$/NationalGalleryRouteFinder.iml" />
     </modules>
   </component>
 </project>

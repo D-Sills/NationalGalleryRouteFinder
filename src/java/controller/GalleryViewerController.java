@@ -5,7 +5,6 @@ import Model.GraphNodeAL;
 import Model.Room;
 import Utilities.Alerts;
 import Utilities.CreateRooms;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
@@ -16,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -25,17 +23,18 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 import static Model.CustomGraph.*;
-import static Utilities.CreateRooms.*;
+import static Utilities.CreateRooms.rooms;
 
 /**
  * @author Darren Sills & Gedvydas Jucius
  * GalleryView class which shows the GalleryViewController.Fxml screen.
- * Responsible for swapping between the main scenes and also for saving and loading data via xstream.
+ * Responsible for all graph related methods and fxml listeners.
  */
 public class GalleryViewerController implements Initializable {
     @FXML
@@ -257,8 +256,13 @@ public class GalleryViewerController implements Initializable {
                 endNode = node;
         }
         if (startNode != null && endNode != null) {
-            CostedPath cpa = findCheapestPathDijkstra(startNode, endNode.getData());
-            assert cpa != null;
+            List<GraphNode<?>> tmp = new ArrayList<>(nodestoignore);
+            CostedPath cpa = findCheapestPathDijkstra(startNode, tmp, endNode.getData());
+            if (cpa == null) {
+                clearPaths();
+                Alerts.genericWarning("Current path is not possible");
+                return;
+            }
             drawRoute(cpa);
             System.out.println("\nThe total path cost is: " + cpa.pathCost);
         }
@@ -364,10 +368,10 @@ public class GalleryViewerController implements Initializable {
         for (GraphNodeAL<?> graphNode : bfsPath) {
             Integer tits = (Integer) graphNode.data;
             num++;
-            for (int x = 0; x < row; x++) {
-                for (int y = 0; y < col; y++) {
-                    if ((x * col + y) == tits) {
-                        pixelWriter.setColor(x, y, Color.PINK);
+            for (int x2 = 0; x2 < row; x2++) {
+                for (int y2 = 0; y2 < col; y2++) {
+                    if ((x2 * col + y2) == tits) {
+                        pixelWriter.setColor(x2, y2, Color.PINK);
                     }
                 }
             }
@@ -395,7 +399,13 @@ public class GalleryViewerController implements Initializable {
         if (startNode != null && endNode != null) {
             routeListView.getItems().clear();
             int max = maxSpinner.getValue();
-            List<List<GraphNode<?>>> cpa = findAllPathsDepthFirst(startNode,null,endNode.getData());
+            List<GraphNode<?>> tmp = new ArrayList<>(nodestoignore);
+            List<List<GraphNode<?>>> cpa = findAllPathsDepthFirst(startNode,tmp,endNode.getData());
+            if (cpa == null) {
+                clearPaths();
+                Alerts.genericWarning("Current path is not possible");
+                return;
+            }
             getAllPathsFinal().clear();
             int i=0;
             for (List<GraphNode<?>> list: cpa) {
@@ -404,14 +414,6 @@ public class GalleryViewerController implements Initializable {
                     getAllPathsFinal().add(list);
                 }
             }
-            //for(int i=getAllPathsFinal().size()-1; i>0; i--) {
-            //    for(int j=i-1; j>=0; j--) {
-            //        if(getAllPathsFinal().get(i).equals(getAllPathsFinal().get(j))) {
-            //            getAllPathsFinal().remove(i);
-            //            break;
-            //        }
-            //    }
-            //}
             for (List<GraphNode<?>> path : getAllPathsFinal()) {
 
                 routeListView.getItems().add(path);
@@ -656,6 +658,7 @@ public class GalleryViewerController implements Initializable {
             }
         });
 
+        //display room values on hover
         rectangle.hoverProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 for (Room room : rooms) {
@@ -673,6 +676,7 @@ public class GalleryViewerController implements Initializable {
                 rectangle.getScene().setCursor(Cursor.DEFAULT);
             }
 
+            //remove from treeview on double click
             roomTree.setOnMouseClicked(mouseEvent -> {
                 if(mouseEvent.getClickCount() == 2) {
                     TreeItem<String> item = roomTree.getSelectionModel().getSelectedItem();

@@ -20,7 +20,8 @@ public class CustomGraph {
 				}
 		}
 		//Retrieve cheapest path by expanding all paths recursively depth-first
-		public static <T> List<List<GraphNode<?>>> findAllPathsDepthFirst(GraphNode<?> from, List<GraphNode<?>> encountered, T lookingfor) {
+		public static <T> List<List<GraphNode<?>>> findAllPathsDepthFirst(GraphNode<?> from, List<GraphNode<?>> ignore, T lookingfor) {
+				List<GraphNode<?>> encountered = new ArrayList<>(ignore);
 				List<List<GraphNode<?>>> result=null;
 				List<List<GraphNode<?>>> temp2;
 				if(from.getData().equals(lookingfor)) { //Found it
@@ -47,9 +48,13 @@ public class CustomGraph {
 				return result;
 		}
 
-		public static <T> CostedPath findCheapestPathDijkstra(GraphNode<?> startNode, T lookingfor){
+		public static <T> CostedPath findCheapestPathDijkstra(GraphNode<?> startNode, List<GraphNode<?>> ignore, T lookingfor){
 				CostedPath cp=new CostedPath(); //Create result object for cheapest path
-				List<GraphNode<?>> encountered=new ArrayList<>();
+				List<GraphNode<?>> encountered;
+				if (ignore == null)
+						encountered = new ArrayList<>();
+				else
+						encountered = new ArrayList<>(ignore);
 				List<GraphNode<?>>unencountered=new ArrayList<>(); //Create encountered/unencountered lists
 				startNode.setNodeValue(0); //Set the starting node value to zero
 				unencountered.add(startNode); //Add the start node as the only value in the unencountered list to start
